@@ -19,9 +19,9 @@ function Home() {
     <section className="grid-field relative min-h-[calc(100vh-4rem)] overflow-hidden border-b border-border">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_40%,color-mix(in_oklab,var(--primary)_10%,transparent),transparent_35%)]"/>
       <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-5 py-16 lg:min-h-[calc(100vh-4rem)] lg:grid-cols-[.85fr_1.15fr] lg:px-8 lg:py-20">
-        <div className="relative mx-auto w-full max-w-sm lg:order-first">
+        <div className="relative mx-auto w-full max-w-xs lg:order-first">
           <div className="absolute -inset-5 rounded-lg border border-primary/20"/>
-          <div className="relative aspect-[3/4] max-h-[420px] overflow-hidden rounded-lg border border-primary/50 bg-card shadow-[var(--shadow-glow)]">
+          <div className="relative aspect-[3/4] max-h-[320px] overflow-hidden rounded-lg border border-primary/50 bg-card shadow-[var(--shadow-glow)]">
             <div className="grid-field absolute inset-0 opacity-30"/>
             <img src={profileAsset.url} alt="Aradhay Sharda" className="h-full w-full object-cover"/>
             <div className="absolute bottom-0 left-0 right-0 h-px bg-primary shadow-[var(--shadow-glow)]"/>
