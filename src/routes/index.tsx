@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, MapPin, Shield, UserRound } from "lucide-react";
+import { ArrowRight, MapPin, Shield } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Panel } from "../components/page-layout";
+import profileAsset from "../assets/profile-photo.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
@@ -30,9 +31,8 @@ function Home() {
         <div className="relative mx-auto w-full max-w-md">
           <div className="absolute -inset-5 rounded-lg border border-primary/20"/>
           <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-primary/50 bg-card shadow-[var(--shadow-glow)]">
-            <div className="grid-field absolute inset-0 opacity-60"/>
-            <div className="absolute left-6 top-6 font-mono text-[10px] uppercase text-cyan-muted">profile.image / pending</div>
-            <div className="relative grid h-full place-items-center"><div className="text-center"><div className="mx-auto grid size-24 place-items-center rounded-full border border-border bg-accent"><UserRound className="size-11 text-primary"/></div><p className="mt-5 font-mono text-xs text-muted-foreground">Professional photo coming soon</p></div></div>
+            <div className="grid-field absolute inset-0 opacity-30"/>
+            <img src={profileAsset.url} alt="Aradhay Sharda" className="h-full w-full object-cover"/>
             <div className="absolute bottom-0 left-0 right-0 h-px bg-primary shadow-[var(--shadow-glow)]"/>
           </div>
           {["left-[-8px] top-[22%]","right-[-8px] top-[38%]","left-[18%] bottom-[-8px]"].map((p,i)=><span key={p} className={`absolute ${p} size-3 rounded-full border border-primary bg-background node-pulse`} style={{animationDelay:`${i*.8}s`}}/>)}
