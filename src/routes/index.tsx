@@ -1,24 +1,48 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight, MapPin, Shield, UserRound } from "lucide-react";
+import { Button } from "../components/ui/button";
+import { Panel } from "../components/page-layout";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({ meta: [
+    { title: "Aradhay Sharda — Aspiring Cybersecurity Professional" },
+    { name: "description", content: "Portfolio of Aradhay Sharda, a UNB Computer Science student pursuing cybersecurity." },
+    { property: "og:title", content: "Aradhay Sharda — Aspiring Cybersecurity Professional" },
+    { property: "og:description", content: "Computer Science student at UNB focused on cybersecurity, learning, and practical growth." },
+    { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
+  ] }), component: Home,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
+function Home() {
+  return <>
+    <section className="grid-field relative min-h-[calc(100vh-4rem)] overflow-hidden border-b border-border">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_40%,color-mix(in_oklab,var(--primary)_10%,transparent),transparent_35%)]"/>
+      <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-5 py-16 lg:min-h-[calc(100vh-4rem)] lg:grid-cols-[1.15fr_.85fr] lg:px-8 lg:py-20">
+        <div className="animate-fade-in">
+          <div className="inline-flex items-center gap-2 rounded border border-border bg-card px-3 py-2 font-mono text-xs text-cyan-muted"><span className="size-2 rounded-full bg-primary node-pulse"/>Currently studying Computer Science at UNB</div>
+          <p className="mt-9 font-mono text-sm text-primary">Hello, I’m</p>
+          <h1 className="mt-3 text-5xl font-extrabold leading-none text-glow sm:text-6xl lg:text-8xl">Aradhay<br/>Sharda</h1>
+          <p className="mt-7 text-lg font-medium text-cyan sm:text-xl">Computer Science Student <span className="text-muted-foreground">|</span> Aspiring Cybersecurity Professional</p>
+          <p className="mt-6 max-w-2xl text-base leading-8 text-muted-foreground">Computer Science student at the University of New Brunswick with a strong interest in cybersecurity, problem-solving, and technology. Passionate about learning, building practical skills, and developing a career in cybersecurity.</p>
+          <div className="mt-9 flex flex-wrap gap-3"><Button asChild variant="hero" size="xl"><Link to="/projects">Explore my work<ArrowRight/></Link></Button><Button asChild variant="glass" size="xl"><Link to="/contact">Contact me</Link></Button></div>
+          <div className="mt-10 flex items-center gap-2 text-sm text-muted-foreground"><MapPin className="size-4 text-primary"/>Fredericton, New Brunswick</div>
+        </div>
+        <div className="relative mx-auto w-full max-w-md">
+          <div className="absolute -inset-5 rounded-lg border border-primary/20"/>
+          <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-primary/50 bg-card shadow-[var(--shadow-glow)]">
+            <div className="grid-field absolute inset-0 opacity-60"/>
+            <div className="absolute left-6 top-6 font-mono text-[10px] uppercase text-cyan-muted">profile.image / pending</div>
+            <div className="relative grid h-full place-items-center"><div className="text-center"><div className="mx-auto grid size-24 place-items-center rounded-full border border-border bg-accent"><UserRound className="size-11 text-primary"/></div><p className="mt-5 font-mono text-xs text-muted-foreground">Professional photo coming soon</p></div></div>
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-primary shadow-[var(--shadow-glow)]"/>
+          </div>
+          {["left-[-8px] top-[22%]","right-[-8px] top-[38%]","left-[18%] bottom-[-8px]"].map((p,i)=><span key={p} className={`absolute ${p} size-3 rounded-full border border-primary bg-background node-pulse`} style={{animationDelay:`${i*.8}s`}}/>)}
+        </div>
+      </div>
+    </section>
+    <section className="bg-surface"><div className="mx-auto grid max-w-7xl gap-5 px-5 py-16 md:grid-cols-3 lg:px-8">
+      <Panel><Shield className="size-6 text-primary"/><p className="mt-6 font-mono text-xs text-cyan-muted">01 / FOCUS</p><h2 className="mt-2 text-lg font-semibold">Cybersecurity</h2><p className="mt-2 text-sm leading-6 text-muted-foreground">Building toward a career protecting systems, information, and people.</p></Panel>
+      <Panel><span className="font-mono text-2xl text-primary">&lt;/&gt;</span><p className="mt-6 font-mono text-xs text-cyan-muted">02 / FOUNDATION</p><h2 className="mt-2 text-lg font-semibold">Computer Science</h2><p className="mt-2 text-sm leading-6 text-muted-foreground">Studying core computing concepts at UNB with graduation expected in 2029.</p></Panel>
+      <Panel><span className="font-mono text-2xl text-primary">♞</span><p className="mt-6 font-mono text-xs text-cyan-muted">03 / MINDSET</p><h2 className="mt-2 text-lg font-semibold">Strategic thinking</h2><p className="mt-2 text-sm leading-6 text-muted-foreground">Using patience, pattern recognition, and planning sharpened through chess.</p></Panel>
+    </div></section>
+  </>;
 }
