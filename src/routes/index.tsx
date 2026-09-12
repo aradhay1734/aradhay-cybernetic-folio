@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, MapPin, Shield, UserRound } from "lucide-react";
+import { ArrowRight, MapPin, Shield } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Panel } from "../components/page-layout";
+import profileAsset from "../assets/profile-photo.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
