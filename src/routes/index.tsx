@@ -100,10 +100,10 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Aradhay Sharda — Software Developer" },
       { property: "og:description", content: "Computer Science student at UNB building AI agents, full-stack web apps, and Java applications. Seeking software developer co-op roles." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://aradhay-cybernetic-folio.lovable.app/" },
+      { property: "og:url", content: "https://aradhay-cybernetic-folio.vercel.app/" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "https://aradhay-cybernetic-folio.lovable.app/" }],
+    links: [{ rel: "canonical", href: "https://aradhay-cybernetic-folio.vercel.app/" }],
   }),
   component: Home,
 });
