@@ -17,7 +17,16 @@ import {
 import { Button } from "../components/ui/button";
 import profileAsset from "../assets/profile-photo.png.asset.json";
 
-const projects = [
+type Project = {
+  title: string;
+  summary: string;
+  stack: readonly string[];
+  tags: readonly string[];
+  repo?: string;
+  bullets: readonly string[];
+};
+
+const projects: readonly Project[] = [
   {
     title: "Co-op Desk — AI Job Application Agent",
     summary: "A human-in-the-loop agent for discovering, evaluating, and organizing co-op applications.",
@@ -64,7 +73,7 @@ const projects = [
       "Implemented statistical analysis with ThinkStats2 to identify long-term and seasonal consumption trends across both cities.",
     ],
   },
-] as const;
+];
 
 const skillGroups = [
   ["Languages", ["Java", "Python", "JavaScript", "TypeScript", "SQL", "HTML", "CSS"]],
@@ -73,7 +82,15 @@ const skillGroups = [
   ["Concepts", ["Object-Oriented Design", "AI Agent Tool-Calling", "REST API Integration", "Unit Testing", "State Management", "Data Analysis"]],
 ] as const;
 
-const experience = [
+type ExperienceItem = {
+  role: string;
+  company: string;
+  period: string;
+  copy: string;
+  connection?: string;
+};
+
+const experience: readonly ExperienceItem[] = [
   {
     role: "Overnight Associate",
     company: "Kent Building Supplies",
@@ -93,7 +110,7 @@ const experience = [
     period: "Dec 2025",
     copy: "Supported a community donation campaign through clear, welcoming communication with members of the public.",
   },
-] as const;
+];
 
 const coursework = ["Programming I & II (Java)", "Introduction to Databases", "Discrete Structures", "Computability & Formal Languages", "Numerical Methods", "Linear Algebra", "Probability & Statistics"];
 
