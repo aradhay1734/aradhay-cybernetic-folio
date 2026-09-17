@@ -40,7 +40,6 @@ const projects: readonly Project[] = [
       "Integrated public Greenhouse and Lever board APIs with a deterministic fallback catalog; automated tests cover policy, scoring, and stop-condition logic.",
     ],
   },
- 
   {
     title: "Campus Gradebook — Java Desktop Application",
     summary: "A tested desktop gradebook with resilient importing, polymorphic rules, and headless operation.",
@@ -53,7 +52,6 @@ const projects: readonly Project[] = [
       "Added 64 JUnit 5 tests and a headless CLI mode so the project builds, runs, and verifies on machines without a display.",
     ],
   },
-
 ];
 
 const skillGroups = [
@@ -83,7 +81,6 @@ const experience: readonly ExperienceItem[] = [
     company: "Walmart",
     period: "May 2025 — Sep 2026",
     copy: "Led front-end operations including cashier scheduling and register coverage, resolved escalated customer issues, owned cash reconciliation, and trained new cashiers on POS systems.",
-    connection: "That hands-on POS training directly informed the workflows and design decisions in my Restaurant POS web application.",
   },
   {
     role: "Volunteer Donation Collector",
@@ -99,9 +96,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Aradhay Sharda — Software Developer" },
-      { name: "description", content: "Computer Science student at UNB building full-stack web apps, AI agents, and Java applications. Seeking software developer co-op roles." },
+      { name: "description", content: "Computer Science student at UNB building AI agents, full-stack web apps, and Java applications. Seeking software developer co-op roles." },
       { property: "og:title", content: "Aradhay Sharda — Software Developer" },
-      { property: "og:description", content: "Computer Science student at UNB building full-stack web apps, AI agents, and Java applications. Seeking software developer co-op roles." },
+      { property: "og:description", content: "Computer Science student at UNB building AI agents, full-stack web apps, and Java applications. Seeking software developer co-op roles." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://aradhay-cybernetic-folio.lovable.app/" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -147,7 +144,7 @@ function Home() {
               <p className="font-mono text-sm text-primary">Hello, I’m</p>
               <h1 className="mt-3 text-4xl font-extrabold leading-none text-glow sm:text-5xl lg:text-7xl">Aradhay<br />Sharda</h1>
               <p className="mt-4 text-base font-medium text-cyan sm:text-xl">Computer Science Student <span className="text-muted-foreground">|</span> Software Developer</p>
-              <p className="mt-5 max-w-2xl text-lg leading-8 text-foreground">I build full-stack web apps, AI agents, and Java applications.</p>
+              <p className="mt-5 max-w-2xl text-lg leading-8 text-foreground">I build AI agents, full-stack web apps, and Java applications.</p>
               <p className="mt-3 max-w-2xl text-sm leading-7 text-muted-foreground sm:text-base">Studying Computer Science at UNB with a strong interest in product development, security, and systems.</p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Button asChild variant="hero" size="xl"><a href="#projects">Explore my work<ArrowUpRight /></a></Button>
@@ -166,7 +163,7 @@ function Home() {
 
       <section id="projects" className="scroll-mt-16 border-b border-border bg-surface">
         <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-28">
-          <SectionHeading index="01" title="Projects" copy="Selected applications spanning AI agents, full-stack product workflows, Java desktop engineering, and data analysis." />
+          <SectionHeading index="01" title="Projects" copy="Selected applications spanning AI agent design, full-stack web development, and tested Java desktop engineering." />
           <div className="grid gap-6 lg:grid-cols-2">
             {projects.map((project, index) => (
               <article key={project.title} className="flex min-w-0 flex-col overflow-hidden rounded-lg border border-border bg-card backdrop-blur-md">
@@ -194,7 +191,7 @@ function Home() {
 
       <section id="skills" className="scroll-mt-16 border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-28">
-          <SectionHeading index="02" title="Skills" copy="Technologies and engineering practices I use to design, build, test, and analyze software." />
+          <SectionHeading index="02" title="Skills" copy="Technologies and engineering practices I use to design, build, and test software." />
           <div className="divide-y divide-border rounded-lg border border-border bg-card px-5 sm:px-7">
             {skillGroups.map(([title, skills]) => <div key={title} className="grid gap-4 py-6 md:grid-cols-[220px_1fr]"><h3 className="font-mono text-sm text-cyan">{title}</h3><div className="flex flex-wrap gap-2">{skills.map((skill) => <Badge key={skill}>{skill}</Badge>)}</div></div>)}
           </div>
