@@ -40,17 +40,7 @@ const projects: readonly Project[] = [
       "Integrated public Greenhouse and Lever board APIs with a deterministic fallback catalog; automated tests cover policy, scoring, and stop-condition logic.",
     ],
   },
-  {
-    title: "Restaurant POS Web Application",
-    summary: "A full-featured staff workflow for orders, sales tracking, and live item performance.",
-    stack: ["React", "JavaScript", "Redux Toolkit", "React Router", "Tailwind CSS"],
-    tags: ["React", "Redux", "Frontend"],
-    bullets: [
-      "Built a point-of-sale application with order management, sales tracking, and a real-time top-selling items dashboard.",
-      "Architected global state with Redux Toolkit to keep cart and order data consistent across views without prop-drilling.",
-      "Implemented client-side routing with React Router for a smooth multi-page staff workflow.",
-    ],
-  },
+ 
   {
     title: "Campus Gradebook — Java Desktop Application",
     summary: "A tested desktop gradebook with resilient importing, polymorphic rules, and headless operation.",
@@ -63,23 +53,14 @@ const projects: readonly Project[] = [
       "Added 64 JUnit 5 tests and a headless CLI mode so the project builds, runs, and verifies on machines without a display.",
     ],
   },
-  {
-    title: "Energy Usage Data Analysis: Toronto vs. Ottawa",
-    summary: "A decade-scale comparison of urban energy consumption patterns and seasonal trends.",
-    stack: ["Python", "Pandas", "NumPy", "SQL", "Seaborn", "Jupyter"],
-    tags: ["Python", "Data Analysis", "SQL"],
-    bullets: [
-      "Cleaned, validated, and structured more than 10 years of messy real-world energy data with Python and SQL.",
-      "Implemented statistical analysis with ThinkStats2 to identify long-term and seasonal consumption trends across both cities.",
-    ],
-  },
+
 ];
 
 const skillGroups = [
-  ["Languages", ["Java", "Python", "JavaScript", "TypeScript", "SQL", "HTML", "CSS"]],
-  ["Frameworks & Libraries", ["React", "Next.js", "Redux Toolkit", "React Router", "Tailwind CSS", "Java Swing", "JUnit 5", "Pandas", "NumPy", "Matplotlib", "Seaborn"]],
-  ["Developer Tools", ["Git", "GitHub", "Maven", "Jupyter Notebook", "Eclipse", "Cursor"]],
-  ["Concepts", ["Object-Oriented Design", "AI Agent Tool-Calling", "REST API Integration", "Unit Testing", "State Management", "Data Analysis"]],
+  ["Languages", ["Java", "TypeScript", "JavaScript", "SQL", "HTML", "CSS"]],
+  ["Frameworks & Libraries", ["React", "Next.js", "Tailwind CSS", "Java Swing", "JUnit 5"]],
+  ["Developer Tools", ["Git", "GitHub", "Maven", "Eclipse", "Cursor"]],
+  ["Concepts", ["Object-Oriented Design", "AI Agent Tool-Calling", "REST API Integration", "Unit Testing", "State Management"]],
 ] as const;
 
 type ExperienceItem = {
