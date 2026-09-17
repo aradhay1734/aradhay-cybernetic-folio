@@ -79,8 +79,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Aradhay Sharda — Computer Science Student" },
-      { name: "description", content: "Portfolio of Aradhay Sharda, a UNB Computer Science student pursuing a career in cybersecurity." },
+      { title: "Aradhay Sharda — Software Developer" },
+      { name: "description", content: "Computer Science student at UNB building full-stack web apps, AI agents, and Java applications. Seeking software developer co-op roles." },
       { name: "author", content: "Aradhay Sharda" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
