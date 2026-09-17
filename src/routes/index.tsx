@@ -149,8 +149,7 @@ function Home() {
               <div className="mt-7 flex flex-wrap gap-3">
                 <Button asChild variant="hero" size="xl"><a href="#projects">Explore my work<ArrowUpRight /></a></Button>
                 <Button asChild variant="glass" size="xl"><a href="#contact">Contact me</a></Button>
-                <Button variant="glass" size="xl" disabled title="Resume PDF will be added when supplied"><Download />Download resume</Button>
-              </div>
+<Button asChild variant="glass" size="xl"><a href="/Aradhay-Sharda-Resume.pdf" target="_blank" rel="noreferrer"><Download />Download resume</a></Button>              </div>
               <div className="mt-7 flex flex-wrap gap-x-5 gap-y-3 text-sm text-muted-foreground">
                 <span className="inline-flex items-center gap-2"><MapPin className="size-4 text-primary" />Fredericton, New Brunswick</span>
                 <a href="https://github.com/aradhay1734" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 hover:text-primary"><Github className="size-4" />GitHub</a>
