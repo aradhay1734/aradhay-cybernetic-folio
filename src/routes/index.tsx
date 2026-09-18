@@ -15,7 +15,7 @@ import {
   TerminalSquare,
 } from "lucide-react";
 import { Button } from "../components/ui/button";
-<img src={profileAsset.url} alt="Portrait of Aradhay Sharda" className="h-full w-full object-cover" />
+
 type Project = {
   title: string;
   summary: string;
@@ -138,7 +138,7 @@ function Home() {
               <div className="absolute -inset-3 rounded-lg border border-primary/20" />
               <div className="relative aspect-[3/4] max-h-[260px] overflow-hidden rounded-lg border border-primary/50 bg-card shadow-[var(--shadow-glow)]">
                 <div className="grid-field absolute inset-0 opacity-30" />
-                <img src={profileAsset.url} alt="Portrait of Aradhay Sharda" className="h-full w-full object-cover" />
+                <img src="/profile-photo.png" alt="Portrait of Aradhay Sharda" className="h-full w-full object-cover" />
                 <div className="absolute inset-x-0 bottom-0 h-px bg-primary shadow-[var(--shadow-glow)]" />
               </div>
             </div>
