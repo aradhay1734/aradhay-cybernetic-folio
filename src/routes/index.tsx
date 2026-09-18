@@ -23,6 +23,7 @@ type Project = {
   stack: readonly string[];
   tags: readonly string[];
   repo?: string;
+  image?: string;
   bullets: readonly string[];
 };
 
@@ -33,6 +34,7 @@ const projects: readonly Project[] = [
     stack: ["TypeScript", "Next.js", "React", "Tailwind CSS"],
     tags: ["AI Agents", "Next.js", "TypeScript", "API Integration"],
     repo: "https://github.com/aradhay1734/Co-op-Application-agent",
+    image: "/coop-desk.png",
     bullets: [
       "Built an agent that searches intern and co-op postings, fetches descriptions, scores resume fit from 0–100, drafts tailored cover letters, and maintains a tracker with CSV export.",
       "Designed five explicit tools around a bounded loop that halts after N postings or once every target company is searched.",
@@ -46,6 +48,7 @@ const projects: readonly Project[] = [
     stack: ["Java 21", "Swing", "Maven", "JUnit 5"],
     tags: ["Java", "OOP", "Testing"],
     repo: "https://github.com/aradhay1734/Java-Basics-",
+    image: "/campus-gradebook.png",
     bullets: [
       "Built a Swing gradebook for students, graduate students, and instructors, using an abstract Person base class and three-level inheritance for polymorphic grading and billing rules.",
       "Implemented a fault-tolerant bulk importer that parses inconsistent delimiters and reports each bad line by number and reason instead of aborting.",
@@ -149,7 +152,8 @@ function Home() {
               <div className="mt-7 flex flex-wrap gap-3">
                 <Button asChild variant="hero" size="xl"><a href="#projects">Explore my work<ArrowUpRight /></a></Button>
                 <Button asChild variant="glass" size="xl"><a href="#contact">Contact me</a></Button>
-<Button asChild variant="glass" size="xl"><a href="/Aradhay-Sharda-Resume.pdf" target="_blank" rel="noreferrer"><Download />Download resume</a></Button>              </div>
+                <Button variant="glass" size="xl" disabled title="Resume PDF will be added when supplied"><Download />Download resume</Button>
+              </div>
               <div className="mt-7 flex flex-wrap gap-x-5 gap-y-3 text-sm text-muted-foreground">
                 <span className="inline-flex items-center gap-2"><MapPin className="size-4 text-primary" />Fredericton, New Brunswick</span>
                 <a href="https://github.com/aradhay1734" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 hover:text-primary"><Github className="size-4" />GitHub</a>
@@ -166,9 +170,13 @@ function Home() {
           <div className="grid gap-6 lg:grid-cols-2">
             {projects.map((project, index) => (
               <article key={project.title} className="flex min-w-0 flex-col overflow-hidden rounded-lg border border-border bg-card backdrop-blur-md">
-                <div className="grid-field relative grid aspect-[16/7] place-items-center border-b border-border bg-background/60" aria-label={`${project.title} screenshot placeholder`}>
-                  <div className="text-center text-muted-foreground"><ImageIcon className="mx-auto size-7" /><span className="mt-2 block font-mono text-xs">PROJECT SCREENSHOT · 0{index + 1}</span></div>
-                </div>
+                {project.image ? (
+                  <img src={project.image} alt={`${project.title} screenshot`} loading="lazy" className="aspect-[16/7] w-full border-b border-border bg-background/60 object-cover object-top" />
+                ) : (
+                  <div className="grid-field relative grid aspect-[16/7] place-items-center border-b border-border bg-background/60" aria-label={`${project.title} screenshot placeholder`}>
+                    <div className="text-center text-muted-foreground"><ImageIcon className="mx-auto size-7" /><span className="mt-2 block font-mono text-xs">PROJECT SCREENSHOT · 0{index + 1}</span></div>
+                  </div>
+                )}
                 <div className="flex flex-1 flex-col p-5 sm:p-7">
                   <div className="flex flex-wrap gap-2">{project.tags.map((tag) => <Badge key={tag}>{tag}</Badge>)}</div>
                   <h3 className="mt-5 text-xl font-semibold sm:text-2xl">{project.title}</h3>
