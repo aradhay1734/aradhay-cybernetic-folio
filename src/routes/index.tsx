@@ -35,10 +35,9 @@ const projects: readonly Project[] = [
     repo: "https://github.com/aradhay1734/Co-op-Application-agent",
     image: "/coop-desk.png",
     bullets: [
-      "Built an agent that searches intern and co-op postings, fetches descriptions, scores resume fit from 0–100, drafts tailored cover letters, and maintains a tracker with CSV export.",
-      "Designed five explicit tools around a bounded loop that halts after N postings or once every target company is searched.",
-      "Enforced the no-auto-submit policy in code, so no application can leave the system without human approval.",
-      "Integrated public Greenhouse and Lever board APIs with a deterministic fallback catalog; automated tests cover policy, scoring, and stop-condition logic.",
+      "Built a web app that searches intern and co-op postings from public job boards, fetches each job description, scores how well it matches a resume, and drafts a cover letter for review.",
+      "Keeps an application tracker with CSV export, recording every posting considered along with its score and status.",
+      "Applications are never submitted automatically — every drafted letter waits for human approval before anything is sent.",
     ],
   },
   {
@@ -49,18 +48,17 @@ const projects: readonly Project[] = [
     repo: "https://github.com/aradhay1734/Java-Basics-",
     image: "/campus-gradebook.png",
     bullets: [
-      "Built a Swing gradebook for students, graduate students, and instructors, using an abstract Person base class and three-level inheritance for polymorphic grading and billing rules.",
-      "Implemented a fault-tolerant bulk importer that parses inconsistent delimiters and reports each bad line by number and reason instead of aborting.",
-      "Added 64 JUnit 5 tests and a headless CLI mode so the project builds, runs, and verifies on machines without a display.",
+      "Built a Java desktop gradebook that tracks a roster of students, graduate students, and instructors, updating averages, letter grades, pass rates, and billing as records change.",
+      "Added a bulk import that accepts pasted records with inconsistent formatting and lists any line it cannot read, with the reason, instead of failing the whole import.",
+      "Includes automated tests and a command-line mode that prints the same report on machines without a display.",
     ],
   },
 ];
 
 const skillGroups = [
-  ["Languages", ["Java", "TypeScript", "JavaScript", "SQL", "HTML", "CSS"]],
-  ["Frameworks & Libraries", ["React", "Next.js", "Tailwind CSS", "Java Swing", "JUnit 5"]],
-  ["Developer Tools", ["Git", "GitHub", "Maven", "Eclipse", "Cursor"]],
-  ["Concepts", ["Object-Oriented Design", "AI Agent Tool-Calling", "REST API Integration", "Unit Testing", "State Management"]],
+  ["Languages", ["Java", "SQL", "HTML", "CSS"]],
+  ["Developer Tools", ["Git", "GitHub", "Eclipse", "Cursor", "Microsoft Excel"]],
+  ["Currently learning", ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "Java Swing", "JUnit 5", "Maven"]],
 ] as const;
 
 type ExperienceItem = {
@@ -151,7 +149,7 @@ function Home() {
               <div className="mt-7 flex flex-wrap gap-3">
                 <Button asChild variant="hero" size="xl"><a href="#projects">Explore my work<ArrowUpRight /></a></Button>
                 <Button asChild variant="glass" size="xl"><a href="#contact">Contact me</a></Button>
-                <Button variant="glass" size="xl" disabled title="Resume PDF will be added when supplied"><Download />Download resume</Button>
+                <Button asChild variant="glass" size="xl"><a href="/Aradhay-Sharda-Resume.pdf" target="_blank" rel="noreferrer"><Download />Download resume</a></Button>
               </div>
               <div className="mt-7 flex flex-wrap gap-x-5 gap-y-3 text-sm text-muted-foreground">
                 <span className="inline-flex items-center gap-2"><MapPin className="size-4 text-primary" />Fredericton, New Brunswick</span>
@@ -197,7 +195,7 @@ function Home() {
 
       <section id="skills" className="scroll-mt-16 border-b border-border">
         <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-28">
-          <SectionHeading index="02" title="Skills" copy="Technologies and engineering practices I use to design, build, and test software." />
+          <SectionHeading index="02" title="Skills" copy="What I work with now, and what I am learning through my current projects." />
           <div className="divide-y divide-border rounded-lg border border-border bg-card px-5 sm:px-7">
             {skillGroups.map(([title, skills]) => <div key={title} className="grid gap-4 py-6 md:grid-cols-[220px_1fr]"><h3 className="font-mono text-sm text-cyan">{title}</h3><div className="flex flex-wrap gap-2">{skills.map((skill) => <Badge key={skill}>{skill}</Badge>)}</div></div>)}
           </div>
