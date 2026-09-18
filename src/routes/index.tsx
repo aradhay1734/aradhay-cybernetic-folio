@@ -15,8 +15,7 @@ import {
   TerminalSquare,
 } from "lucide-react";
 import { Button } from "../components/ui/button";
-import profileAsset from "../assets/profile-photo.png.asset.json";
-
+<img src={profileAsset.url} alt="Portrait of Aradhay Sharda" className="h-full w-full object-cover" />
 type Project = {
   title: string;
   summary: string;
